@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django tutorial</title>
+</head>
+<body>
+   <h1>This template is return by Django server</h1> 
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Styled Table Example</title>
+       <style>
+           body, table {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+           }
+           body {
+               font-family: Arial, sans-serif;
+               margin: 20px;
+           }
+           table {
+               width: 100%;
+               border-collapse: collapse;
+               margin-bottom: 20px;
+           }
+           th, td {
+               border: 1px solid #ddd;
+               padding: 8px;
+               text-align: left;
+           }
+           th {
+               background-color: #f2f2f2;
+               color: black;
+           }
+           tr:hover {
+               background-color: #f5f5f5;
+           }
+           tr:nth-child(even) {
+               background-color: #f9f9f9;
+           }
+           caption {
+               caption-side: top;
+               margin-bottom: 10px;
+               font-size: 1.2em;
+               font-weight: bold;
+           }
+       </style>
+   </head>
+   <body>
+       <h1>People's Table</h1>
+       <table>
+           <caption>List of People</caption>
+           <thead>
+               <tr>
+                   <th>Name</th>
+                   <th>Age</th>
+                   <th>can vote</th>
+               </tr>
+           </thead>
+           <tbody>
+               {% for person in peoples %}
+               <tr>
+                   <td>{{ person.name }}</td>
+                   <td>{{ person.age }}</td>
+                   <td {%if person.age < 18 %}style = "background:red" {%endif%}
+                   >{%if person.age > 18 %}
+                    👍👍
+                    {%else%}
+                    👎👎
+                    {% endif %}
+
+                   </td>
+               </tr>
+               {% endfor %}
+           </tbody>
+       </table>
+   </body>
+   </html>
+   
+</body>
+</html>
